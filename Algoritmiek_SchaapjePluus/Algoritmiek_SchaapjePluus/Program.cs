@@ -10,6 +10,8 @@ namespace Algoritmiek_SchaapjePluus
     {
         static void Main(string[] args)
         {
+            IOHandler handler = new IOHandler();
+            handler.ReadNumbers();
         }
     }
 }
