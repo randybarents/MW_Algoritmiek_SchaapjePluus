@@ -10,14 +10,19 @@ namespace Algoritmiek_SchaapjePluus
 {
     public class IOHandler
     {
+        public List<int> Numbers = new List<int>();
+        string textLine;
+
         public void ReadNumbers()
         {
             using (Stream fileStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Algoritmiek_SchaapjePluus.Resources.NumberInput.txt"))
             {
                 using (StreamReader fileReader = new StreamReader(fileStream))
                 {
-                    string contents = fileReader.ReadToEnd();
-                    Console.WriteLine(contents);
+                    while ((textLine =fileReader.ReadLine()) != null)
+                    {
+                        Numbers.Add(Convert.ToInt32(textLine));
+                    }
                 }
             }
         }

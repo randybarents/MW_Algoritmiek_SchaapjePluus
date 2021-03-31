@@ -12,6 +12,10 @@ namespace Algoritmiek_SchaapjePluus
         {
             IOHandler handler = new IOHandler();
             handler.ReadNumbers();
+            foreach (var number in handler.Numbers)
+            {
+                Console.WriteLine(number);
+            }
         }
     }
 }
