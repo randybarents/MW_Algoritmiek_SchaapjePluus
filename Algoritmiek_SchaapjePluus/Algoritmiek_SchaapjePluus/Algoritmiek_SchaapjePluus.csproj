@@ -53,5 +53,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\NumberInput.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\OutputFile.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

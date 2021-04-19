@@ -23,8 +23,18 @@ namespace Algoritmiek_SchaapjePluus
                     {
                         Numbers.Add(Convert.ToInt32(textLine));
                     }
+                    fileReader.Close();
                 }
             }
+        }
+
+        public void WriteTestCase(int caseNumber, string caseOutcome)
+        {
+            string fileName = @"D:\Git\MW_Algoritmiek_SchaapjePluus\Algoritmiek_SchaapjePluus\Algoritmiek_SchaapjePluus\Resources\OutputFile.txt";
+            using (StreamWriter fileWriter = new StreamWriter(fileName))
+            {
+                fileWriter.WriteLine("Testcase #" + caseNumber + ": " + caseOutcome);
+            }           
         }
     }
 }

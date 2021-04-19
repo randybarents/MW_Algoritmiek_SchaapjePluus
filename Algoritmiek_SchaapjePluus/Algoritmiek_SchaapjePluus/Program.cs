@@ -16,6 +16,7 @@ namespace Algoritmiek_SchaapjePluus
             {
                 Console.WriteLine(number);
             }
+            handler.WriteTestCase(3, "insomnia");
         }
     }
 }
