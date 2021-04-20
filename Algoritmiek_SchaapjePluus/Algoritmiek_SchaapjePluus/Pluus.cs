@@ -11,13 +11,17 @@ namespace Algoritmiek_SchaapjePluus
         IOHandler handler = new IOHandler();
         public int[] sleepNumbers = {0,1,2,3,4,5,6,7,8,9};
         public List<int> countedNumbers = new List<int>();
-        int testcaseNumber = 0;
-        int multiplyAmount = 1;
-        string caseOutcome;
+        public int testcaseNumber = 0;
+        public int multiplyAmount = 1;
+        public string caseOutcome;
+
+        public Pluus()
+        {
+            handler.ReadNumbers();
+        }
 
         public void CountNumbers()
         {
-            handler.ReadNumbers();
             foreach (var countNumber in handler.Numbers)
             {
                 while (CompareNumbers() == false)

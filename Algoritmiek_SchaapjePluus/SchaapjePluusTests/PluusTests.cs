@@ -28,6 +28,26 @@ namespace SchaapjePluusTests
         }
 
         [TestMethod]
+        public void TestAddNumbersSetsCaseOutcomeToInsomniaIfNumberIsOnlyZero()
+        {
+            Pluus pluus = new Pluus();
+
+            pluus.AddNumber("0");
+
+            Assert.AreEqual("Insomnia", pluus.caseOutcome);
+        }
+
+        [TestMethod]
+        public void TestAddNumersSetsLastNumberToCaseOutcome()
+        {
+            Pluus pluus = new Pluus();
+
+            pluus.AddNumber("1");
+
+            Assert.AreEqual("10", pluus.caseOutcome);
+        }
+
+        [TestMethod]
         public void TestCompareNumbersReturnsFalseWhenAllNumbersArentPresent()
         {
             Pluus pluus = new Pluus();
