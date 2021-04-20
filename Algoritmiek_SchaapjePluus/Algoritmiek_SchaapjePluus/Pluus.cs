@@ -9,7 +9,7 @@ namespace Algoritmiek_SchaapjePluus
     public class Pluus
     {
         IOHandler handler = new IOHandler();
-        int[] sleepNumbers = {1,2,3,4,5,6,7,8,9,0};
+        int[] sleepNumbers = {0,1,2,3,4,5,6,7,8,9};
         List<int> countedNumbers = new List<int>();
         int testcaseNumber = 0;
         int multiplyAmount = 1;
@@ -22,10 +22,12 @@ namespace Algoritmiek_SchaapjePluus
             {
                 while (CompareNumbers() == false)
                 {
-                    AddNumber(countNumber.ToString());
+                    int testNumber = countNumber;
+                    testNumber = testNumber * multiplyAmount;
+                    AddNumber(testNumber.ToString());
                     CompareNumbers();
                     multiplyAmount++;
-                    MultiplyNumber(countNumber, multiplyAmount);
+                    //MultiplyNumber(testNumber, multiplyAmount);
                 }
                 if (CompareNumbers() == true)
                 {
@@ -53,7 +55,7 @@ namespace Algoritmiek_SchaapjePluus
                 if (!countedNumbers.Contains(item))
                 {
                     countedNumbers.Add(item);
-                    caseOutcome = item.ToString();
+                    caseOutcome = numberToAdd;
                     countedNumbers.Sort();
                 }
             }
