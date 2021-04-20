@@ -12,20 +12,25 @@ namespace Algoritmiek_SchaapjePluus
         int[] sleepNumbers = {1,2,3,4,5,6,7,8,9,0};
         List<int> countedNumbers = new List<int>();
         int testcaseNumber = 0;
+        int multiplyAmount = 1;
+        string caseOutcome;
 
         public void CountNumbers()
         {
-            foreach (var number in handler.Numbers)
+            handler.ReadNumbers();
+            foreach (var countNumber in handler.Numbers)
             {
                 while (CompareNumbers() == false)
                 {
-                    AddNumber(number.ToString());
+                    AddNumber(countNumber.ToString());
                     CompareNumbers();
+                    multiplyAmount++;
+                    MultiplyNumber(countNumber, multiplyAmount);
                 }
                 if (CompareNumbers() == true)
                 {
                     testcaseNumber++;
-                    handler.WriteTestCase(testcaseNumber ,);
+                    handler.WriteTestCase(testcaseNumber , caseOutcome);
                 }
             }
         }
@@ -48,9 +53,15 @@ namespace Algoritmiek_SchaapjePluus
                 if (!countedNumbers.Contains(item))
                 {
                     countedNumbers.Add(item);
+                    caseOutcome = item.ToString();
                     countedNumbers.Sort();
                 }
             }
+        }
+
+        public int MultiplyNumber(int number , int amount)
+        {
+            return number * amount;
         }
     }
 }

@@ -11,12 +11,8 @@ namespace Algoritmiek_SchaapjePluus
         static void Main(string[] args)
         {
             IOHandler handler = new IOHandler();
-            handler.ReadNumbers();
-            foreach (var number in handler.Numbers)
-            {
-                Console.WriteLine(number);
-            }
-            handler.WriteTestCase(3, "insomnia");
+            Pluus pluus = new Pluus();
+            pluus.CountNumbers();
         }
     }
 }
