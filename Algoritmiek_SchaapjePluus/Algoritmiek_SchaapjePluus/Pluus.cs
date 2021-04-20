@@ -9,8 +9,8 @@ namespace Algoritmiek_SchaapjePluus
     public class Pluus
     {
         IOHandler handler = new IOHandler();
-        int[] sleepNumbers = {0,1,2,3,4,5,6,7,8,9};
-        List<int> countedNumbers = new List<int>();
+        public int[] sleepNumbers = {0,1,2,3,4,5,6,7,8,9};
+        public List<int> countedNumbers = new List<int>();
         int testcaseNumber = 0;
         int multiplyAmount = 1;
         string caseOutcome;
