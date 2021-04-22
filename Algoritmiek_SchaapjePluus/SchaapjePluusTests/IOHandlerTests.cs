@@ -14,7 +14,7 @@ namespace SchaapjePluusTests
 
             handler.ReadNumbers();
 
-            Assert.AreEqual(100, handler.Numbers.Count);
+            Assert.AreEqual(99, handler.Numbers.Count);
         }
     }
 }

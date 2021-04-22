@@ -44,7 +44,7 @@ namespace SchaapjePluusTests
 
             pluus.AddNumber("1");
 
-            Assert.AreEqual("10", pluus.caseOutcome);
+            Assert.AreEqual("1", pluus.caseOutcome);
         }
 
         [TestMethod]

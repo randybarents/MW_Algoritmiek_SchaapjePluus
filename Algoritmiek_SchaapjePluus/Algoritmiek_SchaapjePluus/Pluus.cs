@@ -26,12 +26,11 @@ namespace Algoritmiek_SchaapjePluus
             {
                 while (CompareNumbers() == false)
                 {
-                    int testNumber = countNumber;
-                    testNumber = testNumber * multiplyAmount;
-                    AddNumber(testNumber.ToString());
+                    int numberToAdd = countNumber;
+                    numberToAdd = MultiplyNumber(numberToAdd, multiplyAmount);
+                    AddNumber(numberToAdd.ToString());
                     CompareNumbers();
                     multiplyAmount++;
-                    //MultiplyNumber(testNumber, multiplyAmount);
                 }
                 if (CompareNumbers() == true)
                 {
@@ -67,7 +66,8 @@ namespace Algoritmiek_SchaapjePluus
 
         public int MultiplyNumber(int number , int amount)
         {
-            return number * amount;
+            number = number * amount;
+            return number;
         }
     }
 }
