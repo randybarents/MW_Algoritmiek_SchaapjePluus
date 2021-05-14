@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace Algoritmiek_SchaapjePluus
 {
@@ -14,39 +16,43 @@ namespace Algoritmiek_SchaapjePluus
         public int testcaseNumber = 0;
         public int multiplyAmount = 1;
         public string caseOutcome;
+        string fileName = @"D:\Git\MW_Algoritmiek_SchaapjePluus\Algoritmiek_SchaapjePluus\Algoritmiek_SchaapjePluus\Resources\OutputFile.txt";
+        public StreamWriter writer;
 
         public Pluus()
         {
             handler.ReadNumbers();
+            writer = new StreamWriter(fileName);
+
         }
 
         public void CountNumbers()
         {
             foreach (var countNumber in handler.Numbers)
             {
-                while (CompareNumbers() == false)
+                if (countNumber == 0)
+                {
+                    caseOutcome = "Insomnia";
+                    writer.WriteLine("Testcase #" + testcaseNumber + ": " + caseOutcome);
+                    continue;
+                }
+                while (countedNumbers.Count < 10)
                 {
                     int numberToAdd = countNumber;
                     numberToAdd = MultiplyNumber(numberToAdd, multiplyAmount);
                     AddNumber(numberToAdd.ToString());
-                    CompareNumbers();
                     multiplyAmount++;
                 }
-                if (CompareNumbers() == true)
+                if (countedNumbers.Count == 10)
                 {
                     testcaseNumber++;
-                    handler.WriteTestCase(testcaseNumber , caseOutcome);
+                    writer.WriteLine("Testcase #" + testcaseNumber + ": " + caseOutcome);
+                    writer.Flush();
+                    countedNumbers.Clear();
+                    multiplyAmount = 0;
+                    continue;
                 }
             }
-        }
-        
-        public bool CompareNumbers()
-        {
-            if (countedNumbers.SequenceEqual(sleepNumbers))
-            {
-                return true;
-            }
-            return false;
         }
 
         public void AddNumber(string numberToAdd)
